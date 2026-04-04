@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPD Jadar — Cadastro e Login</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CPD Jadar</h1>
+            <p class="subtitle">Sistema de Cadastro e Login</p>
+        </header>
+
+        <!-- Tab navigation -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="login">Entrar</button>
+            <button class="tab" data-tab="register">Cadastrar</button>
+        </nav>
+
+        <!-- Login form -->
+        <section id="login" class="form-section active">
+            <form id="login-form" novalidate>
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </section>
+
+        <!-- Register form -->
+        <section id="register" class="form-section">
+            <form id="register-form" novalidate>
+                <div class="form-group">
+                    <label for="reg-name">Nome completo</label>
+                    <input type="text" id="reg-name" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Senha</label>
+                    <input type="password" id="reg-password" placeholder="Mínimo 6 caracteres" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-confirm">Confirmar senha</label>
+                    <input type="password" id="reg-confirm" placeholder="Repita a senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </section>
+
+        <!-- Dashboard (shown after login) -->
+        <section id="dashboard" class="form-section">
+            <div class="dashboard-card">
+                <h2>Bem-vindo, <span id="user-name"></span>!</h2>
+                <p>E-mail: <span id="user-email"></span></p>
+                <button class="btn btn-secondary" id="logout-btn">Sair</button>
+            </div>
+        </section>
+
+        <!-- Toast messages -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+</html>
